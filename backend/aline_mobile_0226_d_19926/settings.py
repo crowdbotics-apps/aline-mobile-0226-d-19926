@@ -252,3 +252,26 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ),
 }
+
+SOCIALACCOUNT_PROVIDERS = {
+    "apple": {
+        "APP": {
+            # Your service identifier.
+            "client_id": "com.crowdbotics.test-deploy-0211-de-19317",
+            # The Key ID (visible in the "View Key Details" page).
+            "secret": "crowdboticssociallogintest19317",
+            # Member ID/App ID Prefix -- you can find it below your name
+            # at the top right corner of the page, or it’s your App ID
+            # Prefix in your App ID.
+            "key": "6YKR59QXKM",
+            # The certificate you downloaded when generating the key.
+            "certificate_key": """-----BEGIN PRIVATE KEY-----
+MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgVVp9w+f2QjA/W9xj
+B+8ZZWlVcw2+1XDqjt9GUnuYO5SgCgYIKoZIzj0DAQehRANCAATA8nUZBuiJzs3q
+xywFOlOztAvbe0ciUL8epZKdN20v/VUrXvEEP9Geck+viBQ9RZA6rPb/DgXrRSwR
+vL/vCn1g
+-----END PRIVATE KEY-----
+""",
+        }
+    }
+}

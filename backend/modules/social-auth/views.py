@@ -10,7 +10,7 @@ from django.contrib.sites.models import Site
 
 try:
     APP_DOMAIN = Site.objects.get(id=1).domain
-except Site.DoesNotExist:
+except error:
     APP_DOMAIN = ""
 
 
