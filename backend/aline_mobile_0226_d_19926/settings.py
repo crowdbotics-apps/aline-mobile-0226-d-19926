@@ -69,6 +69,8 @@ THIRD_PARTY_APPS = [
     # start fcm_django push notifications
     'fcm_django',
     # end fcm_django push notifications
+    'allauth.socialaccount.providers.facebook', # add this line here
+    'allauth.socialaccount.providers.apple', # add this other line
 
 ]
 INSTALLED_APPS += LOCAL_APPS + THIRD_PARTY_APPS
@@ -243,3 +245,10 @@ if DEBUG or not (EMAIL_HOST_USER and EMAIL_HOST_PASSWORD):
     if not DEBUG:
         logging.warning("You should setup `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` env vars to send emails.")
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ),
+}
